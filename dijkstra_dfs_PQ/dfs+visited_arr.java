@@ -1,3 +1,57 @@
+/*✅ Problem 1: Emergency Routing in SmartCity
+The city of Byteopolis has installed smart sensors across N intersections, numbered 0 to N-1. The roads between intersections are directed and have associated travel times.
+
+The SmartCity control center is handling a batch of emergencies, each needing to dispatch a vehicle from a source to a destination as fast as possible.
+
+You're given:
+
+A list roads, where each element is [from, to, time].
+
+A list emergencies, where each emergency is [source, destination, urgency].
+
+An array blockedTimes where blockedTimes[i] contains times when intersection i is blocked.
+
+An integer K — number of most urgent emergencies to process.
+
+Rules:
+
+If an intersection is blocked at time t, the vehicle must wait and can only pass after t+1.
+
+You may wait at any node to avoid blocked times.
+
+You must compute the minimum arrival time from source to destination.
+
+If the destination is unreachable, return -1.
+
+Input:
+java
+Copy
+Edit
+int N
+List<List<Integer>> roads      // each: [from, to, time]
+List<List<Integer>> emergencies // each: [source, destination, urgency]
+int[][] blockedTimes           // blockedTimes[i] = list of times when node i is blocked
+int K
+Output:
+Return a list of integers of length K – each being the minimum time to complete the emergency.
+
+Example:
+java
+Copy
+Edit
+N = 4
+roads = [[0,1,2], [1,2,2], [0,2,4], [2,3,3]]
+emergencies = [[0,3,5], [0,2,9], [1,3,2]]
+blockedTimes = [
+    [],        // 0
+    [2],       // 1 is blocked at time 2
+    [4,5],     // 2 is blocked at time 4 and 5
+    []         // 3
+]
+K = 2
+Output:
+[6, 9]
+*/
 package dsaRoundPrep;
 
 import java.util.*;
